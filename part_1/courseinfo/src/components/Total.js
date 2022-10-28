@@ -1,5 +1,9 @@
 import React from "react";
 
-export const Total = (props) => {
-  return <p>Number of exercises {props.exercises1 + props.exercises2 + props.exercises3}</p>;
+export const Total = ({ data }) => {
+  const getTotal = (arr) => {
+    const res = arr.reduce((acc, curr) => acc + curr.exercises, 0);
+    return res.toString();
+  };
+  return <h3>total of {getTotal(data)} exercises</h3>;
 };

@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Part = (props) => {
+export const Part = ({ part }) => {
   return (
-    <p>
-      {props.part} {props.excercise}
-    </p>
+    <li>
+      {part.name} {part.exercises}
+    </li>
   );
 };

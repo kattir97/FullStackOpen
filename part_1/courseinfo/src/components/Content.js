@@ -1,12 +1,16 @@
 import React from "react";
 import { Part } from "./Part";
+import { Total } from "./Total";
 
-export const Content = (props) => {
+export const Content = ({ arr }) => {
   return (
-    <>
-      <Part part={props.part1} exercise={props.exercise1} />
-      <Part part={props.part2} exercise={props.exercise2} />
-      <Part part={props.part3} exercise={props.exercise3} />
-    </>
+    <div>
+      <ul>
+        {arr.map((cs) => (
+          <Part part={cs} key={cs.id} />
+        ))}
+      </ul>
+      <Total data={arr} />
+    </div>
   );
 };
