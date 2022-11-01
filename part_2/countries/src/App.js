@@ -14,7 +14,6 @@ export const App = () => {
 
   const handleClick = (c) => {
     setSelectedCountry(c);
-    console.log(c);
   };
 
   useEffect(() => {
@@ -32,9 +31,8 @@ export const App = () => {
       return <p>Too many matches, specify another filter</p>;
     }
 
-    if (selectedCountry !== null) {
-      console.log("im selected ");
-      const c = selectedCountry;
+    if (selectedCountry !== null || arr.length === 1) {
+      const c = selectedCountry ? selectedCountry : arr[0];
       return <CountryDetails c={c} />;
     }
 
@@ -46,10 +44,10 @@ export const App = () => {
       ));
     }
 
-    if (arr.length === 1) {
-      const c = arr[0];
-      return <CountryDetails c={c} />;
-    }
+    // if (arr.length === 1) {
+    //   const c = arr[0];
+    //   return <CountryDetails c={c} />;
+    // }
   };
 
   return (
