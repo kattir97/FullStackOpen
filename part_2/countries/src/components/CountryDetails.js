@@ -24,35 +24,31 @@ export const CountryDetails = ({ c }) => {
     loadData();
   }, [c]);
 
-  if (wethData) {
-    // wethData.forecast.map((key) => console.log(key));
-    // console.log(wethData);
-    return (
-      <div>
-        <h2>{c?.name?.common}</h2>
-        <h4>Capital: {c.capital}</h4>
-        <h4>Area: {c.area}</h4>
-        <h4>languages:</h4>
-        <ul>
-          {Object.values(c.languages).map((l) => (
-            <li key={l}>{l}</li>
-          ))}
-        </ul>
-        <br />
-        <img src={c.flags.png} alt="flag" />
-        <br />
-        <h2>Weather in {capital}</h2>
-        <h3>temperature in {capital}:</h3>
-        <ul>
-          {wethData?.forecasts.map((key) => {
-            return (
-              <li>
-                Day: {key.day}, High: {key.high}, Low: {key.low}, Weather: {key.text}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h2>{c?.name?.common}</h2>
+      <h4>Capital: {c.capital}</h4>
+      <h4>Area: {c.area}</h4>
+      <h4>languages:</h4>
+      <ul>
+        {Object.values(c.languages).map((l) => (
+          <li key={l}>{l}</li>
+        ))}
+      </ul>
+      <br />
+      <img src={c.flags.png} alt="flag" />
+      <br />
+      <h2>Weather in {capital}</h2>
+      <h3>temperature in {capital}:</h3>
+      <ul>
+        {wethData?.forecasts.map((key) => {
+          return (
+            <li>
+              Day: {key.day}, High: {key.high}, Low: {key.low}, Weather: {key.text}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 };
