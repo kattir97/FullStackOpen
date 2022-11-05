@@ -1,0 +1,14 @@
+.container {
+  height: 100px;
+}
+
+.message {
+  padding: 5px;
+  border: 1px solid green;
+  color: greenyellow;
+}
+
+.delerr {
+  color: red;
+  border: 1px solid red;
+}
